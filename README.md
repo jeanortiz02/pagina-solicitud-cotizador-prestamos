@@ -14,7 +14,7 @@ Proyecto final del Grupo #5 para la asignatura Taller de Programación II.
 
 Crediflash es una página informativa y funcional desarrollada con HTML, CSS y JavaScript puro. El sitio permite que una persona conozca la empresa, revise los requisitos básicos para solicitar un préstamo, calcule una estimación del monto a pagar y envíe una solicitud simulada desde el navegador.
 
-No usa frameworks ni dependencias externas. Todo el comportamiento se ejecuta directamente en el navegador.
+No usa frameworks ni dependencias externas. Todo el comportamiento se ejecuta directamente en el navegador mediante scripts cargados desde `index.html`.
 
 ## Funcionalidades
 
@@ -79,6 +79,34 @@ crediflash/
 - `js/navigation.js`: contiene el comportamiento del menú móvil.
 - `js/app.js`: inicializa la página conectando los scripts anteriores con el DOM.
 - `images/`: contiene los recursos gráficos usados por la página.
+
+## Organización del código
+
+### CSS
+
+El archivo `styles/styles.css` funciona como punto de entrada de estilos. Desde ahí se importan los demás archivos CSS en este orden:
+
+1. `base.css`: variables, reglas globales y estilos base.
+2. `layout.css`: contenedores, espaciados generales, títulos de sección y utilidades compartidas.
+3. `components.css`: botones, tarjetas, controles de formulario e inputs reutilizables.
+4. `sections/header.css`: estilos del encabezado y la navegación.
+5. `sections/hero.css`: estilos de la sección principal.
+6. `sections/features.css`: estilos de las tarjetas de servicios.
+7. `sections/requirements.css`: estilos de la lista de requisitos.
+8. `sections/application.css`: estilos del cotizador, formulario y resultado.
+9. `sections/footer.css`: estilos del pie de página.
+10. `responsive.css`: ajustes para tabletas y celulares.
+
+### JavaScript
+
+Los archivos JavaScript se cargan al final de `index.html` como scripts normales, sin módulos ni funciones anónimas envolventes. El orden de carga es importante porque cada archivo puede usar funciones o constantes definidas en archivos anteriores:
+
+1. `config.js`: define `MIN_AMOUNT`, `MAX_AMOUNT` y `STEP_AMOUNT`.
+2. `utils.js`: define `formatMoney()` y `escapeHtml()`.
+3. `calculator.js`: define `calculateTotalToPay()` e `initCalculator()`.
+4. `form.js`: define `initLoanForm()`.
+5. `navigation.js`: define `initNavigation()`.
+6. `app.js`: obtiene los elementos del DOM e inicializa el cotizador, el formulario y la navegación.
 
 ## Cómo abrir el proyecto
 
