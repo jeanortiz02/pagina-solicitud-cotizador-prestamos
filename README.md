@@ -1,35 +1,35 @@
 # Crediflash
 
-Sitio web estatico para Crediflash, una propuesta de prestamos rapidos y accesibles. El proyecto presenta la empresa, sus servicios, requisitos, un cotizador integrado al formulario de solicitud y datos de contacto.
+Sitio web estático para Crediflash, una propuesta de préstamos rápidos y accesibles. El proyecto presenta la empresa, sus servicios, requisitos, un cotizador integrado al formulario de solicitud y datos de contacto.
 
-Proyecto final del Grupo #5 para la asignatura Taller de Programacion II.
+Proyecto final del Grupo #5 para la asignatura Taller de Programación II.
 
 ## Integrantes
 
-- Edison Mezquita Ramirez
-- Jean Carlos Ortiz Perez
+- Edison Mezquita Ramírez
+- Jean Carlos Ortiz Pérez
 - Nasla Chantal Mesa
 
-## Descripcion
+## Descripción
 
-Crediflash es una pagina informativa y funcional desarrollada con HTML, CSS y JavaScript puro. El sitio permite que una persona conozca la empresa, revise los requisitos basicos para solicitar un prestamo, calcule una estimacion del monto a pagar y envie una solicitud simulada desde el navegador.
+Crediflash es una página informativa y funcional desarrollada con HTML, CSS y JavaScript puro. El sitio permite que una persona conozca la empresa, revise los requisitos básicos para solicitar un préstamo, calcule una estimación del monto a pagar y envíe una solicitud simulada desde el navegador.
 
 No usa frameworks ni dependencias externas. Todo el comportamiento se ejecuta directamente en el navegador.
 
 ## Funcionalidades
 
-- Navegacion por secciones: Nosotros, Cotizar, Requisitos, Solicitud y Contacto.
-- Menu responsive para pantallas pequenas.
-- Seccion de presentacion de la empresa.
+- Navegación por secciones: Nosotros, Cotizar, Requisitos, Solicitud y Contacto.
+- Menú responsive para pantallas pequeñas.
+- Sección de presentación de la empresa.
 - Tarjetas de servicios principales.
-- Listado claro de requisitos para solicitar un prestamo.
-- Cotizador de prestamos integrado dentro del formulario de solicitud.
-- Seleccion de monto entre RD$100 y RD$20,000.
+- Listado claro de requisitos para solicitar un préstamo.
+- Cotizador de préstamos integrado dentro del formulario de solicitud.
+- Selección de monto entre RD$100 y RD$20,000.
 - Plazos disponibles de 6, 12 y 24 meses.
-- Calculo automatico del total estimado y la cuota mensual.
-- Formulario con datos del solicitante, motivo del prestamo y comentario adicional.
+- Cálculo automático del total estimado y la cuota mensual.
+- Formulario con datos del solicitante, motivo del préstamo y comentario adicional.
 - Resumen de solicitud recibido al enviar el formulario.
-- Diseno adaptable para computadoras, tabletas y celulares.
+- Diseño adaptable para computadoras, tabletas y celulares.
 
 ## Estructura del proyecto
 
@@ -50,17 +50,17 @@ crediflash/
 ## Archivos principales
 
 - `index.html`: contiene la estructura principal del sitio, las secciones visibles, el formulario y el cotizador.
-- `styles/styles.css`: contiene los estilos visuales, el layout responsive, botones, tarjetas, formulario, menu y footer.
-- `js/app.js`: contiene la logica del cotizador, el menu movil, el envio del formulario y el resumen de solicitud.
-- `images/`: contiene los recursos graficos usados por la pagina.
+- `styles/styles.css`: contiene los estilos visuales, el layout responsive, botones, tarjetas, formulario, menú y footer.
+- `js/app.js`: contiene la lógica del cotizador, el menú móvil, el envío del formulario y el resumen de solicitud.
+- `images/`: contiene los recursos gráficos usados por la página.
 
-## Como abrir el proyecto
+## Cómo abrir el proyecto
 
 1. Abre la carpeta del proyecto.
 2. Haz doble clic en `index.html`.
-3. El sitio se abrira en el navegador.
+3. El sitio se abrirá en el navegador.
 
-Tambien puedes levantar un servidor local simple si deseas probarlo desde `localhost`:
+También puedes levantar un servidor local simple si deseas probarlo desde `localhost`:
 
 ```bash
 python3 -m http.server 8000
@@ -74,28 +74,28 @@ http://localhost:8000
 
 ## Flujo de uso
 
-1. El usuario entra a la pagina y lee la informacion de Crediflash.
+1. El usuario entra a la página y lee la información de Crediflash.
 2. Revisa los servicios y requisitos.
 3. Entra al formulario de solicitud.
-4. Ajusta el monto del prestamo con el control deslizante o los botones `+` y `-`.
+4. Ajusta el monto del préstamo con el control deslizante o los botones `+` y `-`.
 5. Selecciona el plazo a pagar.
-6. El sistema calcula automaticamente el total estimado y la cuota mensual.
+6. El sistema calcula automáticamente el total estimado y la cuota mensual.
 7. Completa sus datos personales.
-8. Envia la solicitud.
-9. La pagina muestra un resumen con los datos principales enviados.
+8. Envía la solicitud.
+9. La página muestra un resumen con los datos principales enviados.
 
-## Logica del cotizador
+## Lógica del cotizador
 
-El calculo usa el monto solicitado y el plazo elegido.
+El cálculo usa el monto solicitado y el plazo elegido.
 
-Primero se aplica una base segun el monto:
+Primero se aplica una base según el monto:
 
 - Menos de RD$5,000: el monto se multiplica por `1.5`.
 - Desde RD$5,000 hasta menos de RD$10,000: se multiplica por `1.4`.
 - Desde RD$10,000 hasta menos de RD$15,000: se multiplica por `1.3`.
 - Desde RD$15,000 en adelante: se multiplica por `1.2`.
 
-Luego se ajusta segun el plazo:
+Luego se ajusta según el plazo:
 
 - 6 meses: se multiplica por `1.1`.
 - 12 meses: se multiplica por `1.2`.
@@ -105,15 +105,15 @@ La cuota mensual se calcula dividiendo el total estimado entre la cantidad de me
 
 ## Validaciones y comportamiento
 
-- El monto minimo permitido es RD$100.
-- El monto maximo permitido es RD$20,000.
-- Los botones de aumento y reduccion cambian el monto en pasos de RD$100.
+- El monto mínimo permitido es RD$100.
+- El monto máximo permitido es RD$20,000.
+- Los botones de aumento y reducción cambian el monto en pasos de RD$100.
 - Si el usuario intenta salir del rango permitido, se muestra una alerta.
 - Los campos principales del formulario son obligatorios.
 - Al enviar la solicitud, el formulario se reinicia y el cotizador vuelve a actualizar sus valores visibles.
 - El resultado mostrado en pantalla escapa caracteres especiales para evitar insertar HTML no deseado.
 
-## Tecnologias utilizadas
+## Tecnologías utilizadas
 
 - HTML5
 - CSS3
@@ -121,20 +121,20 @@ La cuota mensual se calcula dividiendo el total estimado entre la cantidad de me
 
 ## Secciones del sitio
 
-- `#nosotros`: presentacion de Crediflash.
+- `#nosotros`: presentación de Crediflash.
 - `#beneficios`: servicios y ventajas principales.
-- `#requisitos`: requisitos para solicitar un prestamo.
+- `#requisitos`: requisitos para solicitar un préstamo.
 - `#cotizador`: cotizador integrado dentro del formulario.
 - `#solicitud`: formulario de solicitud.
-- `#contacto`: informacion de contacto y aviso legal.
+- `#contacto`: información de contacto y aviso legal.
 
-## Contacto mostrado en la pagina
+## Contacto mostrado en la página
 
-- Telefono: `(809)-231-8956`
+- Teléfono: `(809)-231-8956`
 - WhatsApp: `(829)-234-5896`
 - Correo: `info@crediflash.com`
-- Ciudad: Distrito Nacional, Republica Dominicana.
+- Ciudad: Distrito Nacional, República Dominicana.
 
 ## Notas
 
-Este proyecto es una simulacion academica. La informacion enviada desde el formulario no se guarda en una base de datos ni se envia a un servidor; solo se muestra un resumen en la misma pagina.
+Este proyecto es una simulación académica. La información enviada desde el formulario no se guarda en una base de datos ni se envía a un servidor; solo se muestra un resumen en la misma página.
