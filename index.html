@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crediflash | Préstamos rápidos</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23087f8c'/%3E%3Ctext x='32' y='41' text-anchor='middle' font-family='Arial' font-size='30' font-weight='700' fill='white'%3EC%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <a class="brand" href="#nosotros" aria-label="Inicio de Crediflash">
+        <img class="brand-logo" src="images/logo-crediflash.png" alt="Crediflash">
+      </a>
+      <button class="menu-button" type="button" aria-label="Abrir menú" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-links">
+        <a href="#nosotros">Nosotros</a>
+        <a href="#cotizador">Cotizar</a>
+        <a href="#requisitos">Requisitos</a>
+        <a href="#solicitud">Solicitud</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero about-hero" id="nosotros">
+      <div class="hero-content">
+        <p class="section-label">Sobre Nosotros</p>
+        <h1><span class="gradient-text">Préstamos simples</span> al alcance de tu mano.</h1>
+        <p>
+          Somos una empresa integrada por Edison Mezquita Ramírez, Jean Carlos Ortiz Pérez
+          y Nasla Chantal Mesa, dedicada a brindar soluciones financieras rápidas y accesibles.
+        </p>
+        <p>
+          ¿Se te averió el vehículo? ¿Aún no recibes tu quincena para cubrir tus cuentas?
+          ¿Quieres hacer un regalo especial o necesitas completar el presupuesto para ese viaje
+          planeado? No te preocupes: nosotros te resolvemos. Si cumples con nuestros requisitos,
+          obtienes tu efectivo en muy poco tiempo. ¡Ven y confía en CrediFlash!
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#cotizador">Cotizar préstamo</a>
+          <a class="button button-secondary" href="#solicitud">Solicitar ahora</a>
+        </div>
+      </div>
+      <div class="hero-brand-card" aria-label="Crediflash préstamos al instante">
+        <div class="flash-emblem">
+          <span class="bill bill-left"></span>
+          <span class="bolt">⚡</span>
+          <span class="bill bill-right"></span>
+        </div>
+        <strong>Crediflash</strong>
+        <span>Préstamos al instante</span>
+      </div>
+    </section>
+
+    <section class="features" id="beneficios">
+      <div class="section-heading section-heading-center">
+        <p class="section-label">Servicios</p>
+        <h2>Una solución básica, clara y fácil de usar</h2>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <h3>Respuesta rápida</h3>
+          <p>El cliente completa sus datos y recibe una confirmación inmediata de su solicitud.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Cotización transparente</h3>
+          <p>El cotizador muestra el total estimado y la cuota mensual antes de enviar el formulario.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Plazos flexibles</h3>
+          <p>El usuario puede comparar préstamos a 6, 12 o 24 meses según su necesidad.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="requirements-section" id="requisitos">
+      <div class="section-heading section-heading-center">
+        <p class="section-label">Requisitos</p>
+        <h2>Conoce los requisitos y da el paso seguro hacia tu préstamo inmediato</h2>
+      </div>
+
+      <ol class="requirements-panel">
+        <li>
+          <span class="requirement-number">1</span>
+          <h3>Cédula de identidad y electoral vigente</h3>
+        </li>
+        <li>
+          <span class="requirement-number">2</span>
+          <h3>Cuenta bancaria activa</h3>
+        </li>
+        <li>
+          <span class="requirement-number">3</span>
+          <h3>Tener capacidad de pago acorde al monto solicitado</h3>
+        </li>
+        <li>
+          <span class="requirement-number">4</span>
+          <h3>Evidencia de ingresos</h3>
+        </li>
+      </ol>
+    </section>
+
+    <section class="application-section" id="solicitud">
+      <div class="section-heading section-heading-center">
+        <p class="section-label">Solicitud</p>
+        <h2>Formulario de solicitud de préstamo</h2>
+        <p>Completa los datos del cliente para registrar la solicitud.</p>
+      </div>
+
+      <form class="application-form" id="loanForm">
+        <div class="calculator-card form-calculator" id="cotizador" aria-label="Cotizador de préstamos">
+          <div class="amount-row">
+            <button class="round-button" type="button" id="decreaseAmount" aria-label="Disminuir monto">-</button>
+            <div>
+              <span class="small-text">Monto solicitado</span>
+              <strong id="amountValue">RD$10,000.00</strong>
+            </div>
+            <button class="round-button" type="button" id="increaseAmount" aria-label="Aumentar monto">+</button>
+          </div>
+
+          <label class="range-label" for="amountRange">Selecciona el monto</label>
+          <input id="amountRange" type="range" min="100" max="20000" step="100" value="10000">
+
+          <label class="field-label" for="loanTerm">Plazo a pagar</label>
+          <select id="loanTerm">
+            <option value="6">6 meses</option>
+            <option value="12">12 meses</option>
+            <option value="24">24 meses</option>
+          </select>
+
+          <div class="summary">
+            <div>
+              <span>Total a pagar</span>
+              <strong id="totalValue">RD$0.00</strong>
+            </div>
+            <div>
+              <span>Cuota mensual</span>
+              <strong id="monthlyValue">RD$0.00</strong>
+            </div>
+            <div>
+              <span>Plazo elegido</span>
+              <strong id="termValue">6 meses</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <label>
+            Nombre completo
+            <input type="text" id="fullName" name="fullName" placeholder="Ej. Ana Pérez" required>
+          </label>
+          <label>
+            Cédula
+            <input type="text" id="documentId" name="documentId" placeholder="000-0000000-0" required>
+          </label>
+          <label>
+            Teléfono
+            <input type="tel" id="phone" name="phone" placeholder="809-000-0000" required>
+          </label>
+          <label>
+            Correo electrónico
+            <input type="email" id="email" name="email" placeholder="cliente@correo.com" required>
+          </label>
+          <label>
+            Ingreso mensual
+            <input type="number" id="income" name="income" min="1" placeholder="45000" required>
+          </label>
+          <label>
+            Motivo del préstamo
+            <select id="purpose" name="purpose" required>
+              <option value="">Seleccionar</option>
+              <option value="Educación">Educación</option>
+              <option value="Negocio">Negocio</option>
+              <option value="Salud">Salud</option>
+              <option value="Hogar">Hogar</option>
+              <option value="Otros">Otros</option>
+            </select>
+          </label>
+        </div>
+        <label>
+          Comentario adicional
+          <textarea id="comments" name="comments" rows="4" placeholder="Describe brevemente tu necesidad"></textarea>
+        </label>
+        <button class="button button-primary form-submit" type="submit">Enviar solicitud</button>
+      </form>
+
+      <div class="form-result" id="formResult" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contacto">
+    <div class="footer-brand-block">
+      <div class="footer-emblem">
+        <span>⚡</span>
+      </div>
+      <strong>Credi<span>flash</span></strong>
+      <p>Propiedad de Edison, Jean & Nasla S.R.L. | Ciudad: Distrito Nacional, República Dominicana.</p>
+    </div>
+    <div class="footer-contact">
+      <h3>Contáctanos</h3>
+      <p>Teléfono: (809)-231-8956</p>
+      <p>WhatsApp: (829)-234-5896</p>
+      <p>Correo: info@crediflash.com</p>
+    </div>
+    <div class="footer-legal">
+      <p>
+        El período mínimo para la devolución de un préstamo es de 90 días, siendo el máximo de
+        365 días. Ejemplo de préstamo: monto solicitado de RD$5,000 en cuotas fijas. La aprobación
+        definitiva del préstamo quedará supeditada al cumplimiento de las condiciones exigidas por
+        la empresa.
+      </p>
+      <p>© 2026 Edison Jean & Nasla S.R.L. / Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <script src="js/app.js?v=5"></script>
+</body>
+</html>
