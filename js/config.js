@@ -1,0 +1,3 @@
+const MIN_AMOUNT = 100;
+const MAX_AMOUNT = 20000;
+const STEP_AMOUNT = 100;

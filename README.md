@@ -38,8 +38,24 @@ crediflash/
 ├── README.md
 ├── index.html
 ├── styles/
-│   └── styles.css
+│   ├── styles.css
+│   ├── base.css
+│   ├── layout.css
+│   ├── components.css
+│   ├── responsive.css
+│   └── sections/
+│       ├── header.css
+│       ├── hero.css
+│       ├── features.css
+│       ├── requirements.css
+│       ├── application.css
+│       └── footer.css
 ├── js/
+│   ├── config.js
+│   ├── utils.js
+│   ├── calculator.js
+│   ├── form.js
+│   ├── navigation.js
 │   └── app.js
 └── images/
     ├── logo-crediflash.png
@@ -50,8 +66,18 @@ crediflash/
 ## Archivos principales
 
 - `index.html`: contiene la estructura principal del sitio, las secciones visibles, el formulario y el cotizador.
-- `styles/styles.css`: contiene los estilos visuales, el layout responsive, botones, tarjetas, formulario, menú y footer.
-- `js/app.js`: contiene la lógica del cotizador, el menú móvil, el envío del formulario y el resumen de solicitud.
+- `styles/styles.css`: importa todos los archivos CSS por orden.
+- `styles/base.css`: contiene variables, reset básico y estilos globales.
+- `styles/layout.css`: contiene reglas compartidas de layout, encabezados de sección y utilidades visuales.
+- `styles/components.css`: contiene botones, tarjetas, controles e inputs reutilizables.
+- `styles/sections/`: contiene los estilos específicos de cada sección del sitio.
+- `styles/responsive.css`: contiene los ajustes para tabletas y celulares.
+- `js/config.js`: contiene los valores configurables del cotizador.
+- `js/utils.js`: contiene utilidades reutilizables como formato de moneda y escape de HTML.
+- `js/calculator.js`: contiene la lógica del cotizador.
+- `js/form.js`: contiene el manejo del formulario y el resumen de solicitud.
+- `js/navigation.js`: contiene el comportamiento del menú móvil.
+- `js/app.js`: inicializa la página conectando los scripts anteriores con el DOM.
 - `images/`: contiene los recursos gráficos usados por la página.
 
 ## Cómo abrir el proyecto
