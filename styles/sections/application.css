@@ -54,7 +54,7 @@ input[type="range"] {
 .summary {
   margin-top: 26px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 12px;
 }
 
@@ -139,7 +139,7 @@ input[type="range"] {
 
 .result-details {
   display: grid;
-  grid-template-columns: repeat(5, minmax(120px, 1fr));
+  grid-template-columns: repeat(6, minmax(120px, 1fr));
   gap: 12px;
   padding: 18px 0;
 }
@@ -161,6 +161,54 @@ input[type="range"] {
   display: block;
   margin-top: 4px;
   color: var(--primary);
+}
+
+.amortization-block {
+  padding-bottom: 18px;
+}
+
+.amortization-block h4 {
+  margin: 0 0 12px;
+  color: var(--primary);
+  font-size: 1rem;
+}
+
+.amortization-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.amortization-table {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+.amortization-table th,
+.amortization-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+  color: var(--primary);
+  text-align: right;
+  white-space: nowrap;
+}
+
+.amortization-table th {
+  background: var(--surface-soft);
+  color: var(--muted);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+}
+
+.amortization-table th:first-child,
+.amortization-table td:first-child {
+  text-align: left;
+}
+
+.amortization-table tbody tr:last-child td {
+  border-bottom: 0;
 }
 
 .result-note {

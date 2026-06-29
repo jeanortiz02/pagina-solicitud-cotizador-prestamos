@@ -5,6 +5,7 @@ function getPageElements() {
     decreaseAmount: document.querySelector("#decreaseAmount"),
     formResult: document.querySelector("#formResult"),
     increaseAmount: document.querySelector("#increaseAmount"),
+    interestValue: document.querySelector("#interestValue"),
     loanForm: document.querySelector("#loanForm"),
     loanTerm: document.querySelector("#loanTerm"),
     menuButton: document.querySelector(".menu-button"),

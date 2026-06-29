@@ -22,12 +22,65 @@ function calculateTotalToPay(amount, term) {
   return total;
 }
 
+function roundToCents(value) {
+  return Math.round(value * 100);
+}
+
+function centsToMoney(cents) {
+  return cents / 100;
+}
+
+function calculateLoanQuote(amount, term) {
+  const amountCents = roundToCents(amount);
+  const totalCents = roundToCents(calculateTotalToPay(amount, term));
+  const interestCents = totalCents - amountCents;
+
+  return {
+    amount: centsToMoney(amountCents),
+    interest: centsToMoney(interestCents),
+    monthlyPayment: centsToMoney(totalCents / term),
+    term,
+    total: centsToMoney(totalCents)
+  };
+}
+
+function createAmortizationSchedule(amount, term) {
+  const quote = calculateLoanQuote(amount, term);
+  const amountCents = roundToCents(quote.amount);
+  const interestCents = roundToCents(quote.interest);
+  const principalBaseCents = Math.floor(amountCents / term);
+  const principalRemainderCents = amountCents % term;
+  const interestBaseCents = Math.floor(interestCents / term);
+  const interestRemainderCents = interestCents % term;
+  let paidPrincipalCents = 0;
+
+  return Array.from({ length: term }, (_, index) => {
+    const installmentNumber = index + 1;
+    const principalCents =
+      principalBaseCents + (index < principalRemainderCents ? 1 : 0);
+    const interestCentsForInstallment =
+      interestBaseCents + (index < interestRemainderCents ? 1 : 0);
+    const paymentCents = principalCents + interestCentsForInstallment;
+
+    paidPrincipalCents += principalCents;
+
+    return {
+      balance: centsToMoney(Math.max(amountCents - paidPrincipalCents, 0)),
+      interest: centsToMoney(interestCentsForInstallment),
+      number: installmentNumber,
+      payment: centsToMoney(paymentCents),
+      principal: centsToMoney(principalCents)
+    };
+  });
+}
+
 function initCalculator(elements) {
   const {
     amountRange,
     amountValue,
     decreaseAmount,
     increaseAmount,
+    interestValue,
     loanTerm,
     monthlyValue,
     termValue,
@@ -37,12 +90,12 @@ function initCalculator(elements) {
   function updateCalculator() {
     const amount = Number(amountRange.value);
     const term = Number(loanTerm.value);
-    const total = calculateTotalToPay(amount, term);
-    const monthlyPayment = total / term;
+    const quote = calculateLoanQuote(amount, term);
 
     amountValue.textContent = formatMoney(amount);
-    totalValue.textContent = formatMoney(total);
-    monthlyValue.textContent = formatMoney(monthlyPayment);
+    interestValue.textContent = formatMoney(quote.interest);
+    totalValue.textContent = formatMoney(quote.total);
+    monthlyValue.textContent = formatMoney(quote.monthlyPayment);
     termValue.textContent = `${term} meses`;
   }
 

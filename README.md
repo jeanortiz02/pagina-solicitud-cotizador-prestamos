@@ -133,10 +133,10 @@ http://localhost:8000
 3. Entra al formulario de solicitud.
 4. Ajusta el monto del préstamo con el control deslizante o los botones `+` y `-`.
 5. Selecciona el plazo a pagar.
-6. El sistema calcula automáticamente el total estimado y la cuota mensual.
+6. El sistema calcula automáticamente el interés estimado, el total estimado y la cuota mensual.
 7. Completa sus datos personales.
 8. Envía la solicitud.
-9. La página muestra un resumen con los datos principales enviados.
+9. La página muestra un resumen con los datos principales enviados y una amortización estimada.
 
 ## Lógica del cotizador
 
@@ -155,7 +155,9 @@ Luego se ajusta según el plazo:
 - 12 meses: se multiplica por `1.2`.
 - 24 meses: se multiplica por `1.3`.
 
-La cuota mensual se calcula dividiendo el total estimado entre la cantidad de meses seleccionada.
+El interés estimado se calcula restando el monto solicitado al total estimado. La cuota mensual se calcula dividiendo el total estimado entre la cantidad de meses seleccionada.
+
+Al enviar la solicitud, el resumen muestra una amortización estimada con capital, interés, pago y balance por cada cuota.
 
 ## Validaciones y comportamiento
 
